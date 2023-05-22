@@ -1,4 +1,4 @@
-import Button from './ui/Button'
+import EventButton from '../ui/EventButton'
 import DateIcon from '../icons/DateIcon'
 import AddressIcon from '../icons/AddressIcon'
 import ArrowRightIcon from '../icons/ArrowRightIcon'
@@ -11,7 +11,7 @@ export default function EventItem({ data }) {
     year: 'numeric',
   })
   const formattedAddress = location.replace(', ', '\n')
-  const explorePath = `/event/detail/${id}`
+  const explorePath = `event-page/events/detail/${id}`
 
   return (
     <li className="shadow-cardShadow rounded-lg overflow-hidden bg-white m-4 flex flex-col gap-4 md:mt-0 md:mb-8 md:flex-row md:gap-6">
@@ -29,12 +29,12 @@ export default function EventItem({ data }) {
           <address className="text-gray-600">{formattedAddress}</address>
         </div>
         <div className="flex flex-col py-2 px-4 md:flex-row md:justify-end">
-          <Button link={explorePath} id={id}>
+          <EventButton link={explorePath} id={id}>
             <span className="align-middle">Explore Event</span>
             <span className="align-middle ml-2 inline-flex justify-center items-center">
               <ArrowRightIcon />
             </span>
-          </Button>
+          </EventButton>
         </div>
       </div>
     </li>

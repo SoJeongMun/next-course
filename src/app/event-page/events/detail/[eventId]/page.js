@@ -1,10 +1,10 @@
 'use client'
 
 import { useParams, usePathname, useRouter } from 'next/navigation'
-import { getEventById } from '../../../../../event-dummy-data'
-import EventContent from '@/app/components/event-detail/EventContent'
-import EventSummary from '@/app/components/event-detail/EventSummary'
-import EventLogistics from '@/app/components/event-detail/EventLogistics'
+import { getEventById } from '@/event-dummy-data'
+import EventContent from '@app/components/event-detail/EventContent'
+import EventSummary from '@app/components/event-detail/EventSummary'
+import EventLogistics from '@app/components/event-detail/EventLogistics'
 
 export default function EventDetail() {
   const router = useRouter()
