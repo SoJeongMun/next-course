@@ -1,16 +1,15 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { getEventById } from '@/event-dummy-data'
 import EventContent from '@app/components/event-detail/EventContent'
 import EventSummary from '@app/components/event-detail/EventSummary'
 import EventLogistics from '@app/components/event-detail/EventLogistics'
 import ErrorAlert from '@/app/components/ui/ErrorAlert'
+import { getEventById } from '@/app/helpers/api-util'
 
-export default function EventDetail() {
+export default async function EventDetail() {
   const { eventId } = useParams()
-  const eventData = getEventById(eventId)
-
+  const eventData = await getEventById(eventId)
   if (!eventData) {
     return (
       <ErrorAlert>

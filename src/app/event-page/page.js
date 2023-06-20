@@ -1,19 +1,11 @@
 import EventList from '@app/components/event/EventList'
 import { getFeaturedEvents } from '../helpers/api-util'
 
-export default function EventHome({ events }) {
+export default async function EventHome() {
+  const events = await getFeaturedEvents()
   return (
     <div>
       <EventList list={events} />
     </div>
   )
-}
-
-export async function getStaticProps() {
-  const events = await getFeaturedEvents()
-  return {
-    props: {
-      events,
-    },
-  }
 }

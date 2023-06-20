@@ -4,7 +4,7 @@ import EventList from '@/app/components/event/EventList'
 import ResultsTitle from '@/app/components/event/ResultsTitle'
 import ErrorAlert from '@/app/components/ui/ErrorAlert'
 import EventButton from '@/app/components/ui/EventButton'
-import { getFilteredEvents } from '@/event-dummy-data'
+import { getFilteredEvents } from '@/app/helpers/api-util'
 import { useParams } from 'next/navigation'
 
 export default function EventFiltering() {

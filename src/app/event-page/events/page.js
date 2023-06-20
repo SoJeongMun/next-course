@@ -2,12 +2,12 @@
 
 import EventList from '@/app/components/event/EventList'
 import EventSearch from '@/app/components/event/EventSearch'
-import { getAllEvents } from '@/event-dummy-data'
+import { getAllEvents } from '@/app/helpers/api-util'
 import { useRouter } from 'next/navigation'
 
-export default function WholeEvents() {
-  const wholeEvents = getAllEvents()
+export default async function WholeEvents() {
   const router = useRouter()
+  const wholeEvents = await getAllEvents()
 
   const findEventHandler = (year, month) => {
     const fullPath = `/event-page/events/detail/${year}/${month}`
